@@ -31,11 +31,26 @@ int main()
     torch::Tensor output = linear(input);
         //Host input
     float* h_ptr = input.data_ptr<float>();
+    float *weight_ptr, *bias_ptr;
+    //Host weight and biases ptr
+    for (const auto& pair : linear->named_parameters()) {
+        std::string name = pair.key();
+        torch::Tensor param = pair.value();
+
+        if (name == "weight") {
+            // Access the weight tensor
+            weight_ptr = param.data_ptr<float>();
+        } else if (name == "bias") {
+            // Access the bias tensor
+            bias_ptr = param.data_ptr<float>();
+        }
+    }
+
 
     //Store your cuda_output in this input
     float* cuda_output;
 
-    
+
     // Print the output shape
     size_t output_size =1;
     for(int i : output.sizes())
