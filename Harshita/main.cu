@@ -48,13 +48,13 @@ bool compareArrays(const float* arr1, const float* arr2, size_t size, float tole
 
 int main() {
     //A random 4D tensor (e.g., [batch_size, channels, height, width])
-    torch::Tensor input = torch::rand({1, 2,32,32});
+    torch::Tensor input = torch::rand({1, 8,1024,1024});
     float* h_ptr = input.data_ptr<float>();
 
     int batch_size = 1;
-    int channels = 2;
-    int height = 32;
-    int width = 32;
+    int channels = 8;
+    int height = 1024;
+    int width = 1024;
     size_t total_size = batch_size * channels * height * width;
 
     // Allocating memory on the device
