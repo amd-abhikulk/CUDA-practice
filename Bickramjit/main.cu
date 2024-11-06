@@ -31,11 +31,12 @@ int main()
     //Store your cuda_output in this input
     float* cuda_output;
     // Apply average pooling
-    torch::nn::Conv2d convLayer(torch::nn::Conv2dOptions(3, 8, 3).stride(1));
-
+    torch::nn::Conv2d convLayer(torch::nn::Conv2dOptions(3, 8, 3).stride(1).bias(false));
 
     // Apply the pooling operation
     torch::Tensor output = convLayer(input);
+    float* weight = convLayer->weight.data_ptr<float>();
+
 
     // Print the output shape
     size_t output_size =1;
