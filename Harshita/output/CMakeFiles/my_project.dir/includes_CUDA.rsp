@@ -1,0 +1,1 @@
+-isystem "/home/arunGPU12/.local/lib/python3.10/site-packages/torch/include" -isystem "/home/arunGPU12/.local/lib/python3.10/site-packages/torch/include/torch/csrc/api/include" -isystem "/usr/local/cuda-12.4/include"
