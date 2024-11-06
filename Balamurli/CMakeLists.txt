@@ -5,11 +5,15 @@ set(CMAKE_CUDA_COMPILER /usr/local/cuda-12.4/bin/nvcc)
 set(CMAKE_CUDA_TOOLKIT_ROOT_DIR  /usr/local/cuda-12.4)
 project(MyProject LANGUAGES CXX CUDA)
 
+set(CMAKE_CUDA_ARCHITECTURES 86)
+
 find_package(OpenCV REQUIRED)
 
 set(CUDA_LIBRARIES  /usr/local/cuda-12.4/lib64)
-set(CMAKE_INCLUDE_PATH  /usr/local/cuda-12.4/include)
+set(CUDA_INCLUDE_PATH  /usr/local/cuda-12.4/include)
+include_directories((${CUDA_INCLUDE_PATH}))
 #find_package(CUDA REQUIRED PATHS ${CMAKE_CUDA_TOOLKIT_ROOT_DIR})
+
 include_directories(${OpenCV_INCLUDE_DIRS})
 
 add_executable(my_project main.cu)
