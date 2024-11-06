@@ -1,3 +1,0 @@
-/home/arunGPU12/harshitha/Cuda_Assignment/CUDA-practice/Harshita/output/CMakeFiles/my_project.dir
-/home/arunGPU12/harshitha/Cuda_Assignment/CUDA-practice/Harshita/output/CMakeFiles/edit_cache.dir
-/home/arunGPU12/harshitha/Cuda_Assignment/CUDA-practice/Harshita/output/CMakeFiles/rebuild_cache.dir
